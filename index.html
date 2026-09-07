@@ -31,10 +31,10 @@
         .step { display: none; animation: fadeIn 0.5s ease-in-out forwards; }
         .step.active { display: block; }
         h1 { font-size: 1.4rem; margin-bottom: 12px; color: #ff7675; }
-        p { font-size: 0.95rem; line-height: 1.5; margin-bottom: 18px; color: #dfe6e9; }
+        p { font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px; color: #dfe6e9; }
         .photo {
             width: 100%;
-            max-height: 320px;
+            max-height: 300px;
             border-radius: 12px;
             object-fit: cover;
             margin-bottom: 15px;
@@ -43,14 +43,26 @@
         .photo-row {
             display: flex;
             gap: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         .photo-row img {
             width: 50%;
-            height: 170px;
+            height: 150px;
             object-fit: cover;
             border-radius: 10px;
             border: 2px solid rgba(255,255,255,0.15);
+        }
+        .long-message {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 12px;
+            border-radius: 12px;
+            border-left: 3px solid #ff7675;
+            margin-bottom: 15px;
+            max-height: 180px;
+            overflow-y: auto;
         }
         .btn {
             background: linear-gradient(135deg, #ff7675, #d63031);
@@ -113,14 +125,16 @@
             <button class="btn" onclick="nextStep(6)">Son Sürpriz 🎉</button>
         </div>
 
-        <!-- 6. ADIM (FİNAL & ÖZEL MESAJ) -->
+        <!-- 6. ADIM (FİNAL & UZUN MESAJ) -->
         <div class="step" id="step6">
             <h1>🎉 İYİ Kİ DOĞDUN ELİF! 🎉</h1>
             <div class="photo-row">
                 <img src="IMG_20260905_171356_394.jpg" alt="Son Anı 1">
                 <img src="IMG_20260823_092031_135.webp" alt="Son Anı 2">
             </div>
-            <p>İyi ki doğdun bebeğim, iyi ki varsın! Seni o kadar çok seviyorum ki... Yeni yaşında tüm dileklerin gerçek olsun, hep birlikte nice mutlu, huzurlu ve aşk dolu yıllarımız olsun inşallah. ❤️✨</p>
+            <div class="long-message">
+                Canım sevgilim, birtanem, güzel bebeğim... İyi ki doğdun, iyi ki bu dünyaya geldin ve kaderim seninle kesişti. Gülüşünle içimi ısıttığın, her anımda yanımda olup hayatıma anlam kattığın için sana ne kadar teşekkür etsem azdır. Seni her şeyden çok ama çok seviyorum bebeğim. Yeni yaşın sana huzur, mutluluk, sağlık ve dilediğin her şeyi getirsin. Birlikte daha nice yıllarımız, el ele binlerce güzel anımız olsun inşallah. Seni çok seven sevgilin ❤️✨
+            </div>
             <button class="btn" onclick="patlat()">Konfeti Patlat! 🎊</button>
         </div>
     </div>
@@ -134,8 +148,8 @@
 
         function patlat() {
             confetti({
-                particleCount: 120,
-                spread: 80,
+                particleCount: 150,
+                spread: 90,
                 origin: { y: 0.6 }
             });
         }
