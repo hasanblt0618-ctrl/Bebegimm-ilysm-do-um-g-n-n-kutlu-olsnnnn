@@ -40,6 +40,18 @@
             margin-bottom: 15px;
             border: 2px solid rgba(255,255,255,0.15);
         }
+        .photo-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .photo-row img {
+            width: 50%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid rgba(255,255,255,0.15);
+        }
         .btn {
             background: linear-gradient(135deg, #ff7675, #d63031);
             color: white;
@@ -87,32 +99,27 @@
 
         <!-- 4. ADIM -->
         <div class="step" id="step4">
-            <h1>💌 Küçük Bir Not</h1>
-            <img src="IMG_20260823_092031_135.webp" class="photo" alt="Anı 3">
-            <p>Her günüm seninle güzel, her anım seninle anlamlı...</p>
-            <button class="btn" onclick="nextStep(5)">İlerle ➡️</button>
+            <h1>🌟 En Özel Kareler</h1>
+            <img src="IMG_20260906_215132_431.jpg" class="photo" alt="Anı 3">
+            <p>Birlikte daha bir sürü güzel anı biriktireceğiz! ✨</p>
+            <button class="btn" onclick="nextStep(5)">Devam Et ➡️</button>
         </div>
 
         <!-- 5. ADIM -->
         <div class="step" id="step5">
-            <h1>🌟 En Özel Kareler</h1>
-            <img src="IMG_20260906_215132_431.jpg" class="photo" alt="Anı 4">
-            <p>Birlikte daha bir sürü güzel anı biriktireceğiz! ✨</p>
-            <button class="btn" onclick="nextStep(6)">Devam Et ➡️</button>
-        </div>
-
-        <!-- 6. ADIM -->
-        <div class="step" id="step6">
             <h1>❤️ Seni Çok Seviyorum</h1>
-            <img src="IMG-20260821-WA0011.jpg" class="photo" alt="Anı 5">
+            <img src="IMG-20260821-WA0011.jpg" class="photo" alt="Anı 4">
             <p>İyi ki doğdun bebeğim! ❤️</p>
-            <button class="btn" onclick="nextStep(7)">Son Sürpriz 🎉</button>
+            <button class="btn" onclick="nextStep(6)">Son Sürpriz 🎉</button>
         </div>
 
-        <!-- 7. ADIM (FİNAL & KONFETİ) -->
-        <div class="step" id="step7">
+        <!-- 6. ADIM (FİNAL & İKİ FOTOĞRAF YAN YANA + KONFETİ) -->
+        <div class="step" id="step6">
             <h1>🎉 İYİ Kİ DOĞDUN ELİF! 🎉</h1>
-            <img src="IMG_20260826_021047_769.jpg" class="photo" alt="Anı 6">
+            <div class="photo-row">
+                <img src="IMG_20260905_171356_394.jpg" alt="Son Anı 1">
+                <img src="IMG_20260823_092031_135.webp" alt="Son Anı 2">
+            </div>
             <p>Yeni yaşında tüm dileklerin gerçek olsun. Hep birlikte nice mutlu, sağlıklı ve aşk dolu yıllara! ❤️✨</p>
             <button class="btn" onclick="patlat()">Konfeti Patlat! 🎊</button>
         </div>
@@ -122,7 +129,7 @@
         function nextStep(stepNumber) {
             document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
             document.getElementById('step' + stepNumber).classList.add('active');
-            if(stepNumber === 7) patlat();
+            if(stepNumber === 6) patlat();
         }
 
         function patlat() {
